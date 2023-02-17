@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.010" tests="2" failures="2">
+  <testsuite name="Root Suite" timestamp="2023-02-05T07:07:14" tests="0" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Signup" timestamp="2023-02-05T07:07:14" tests="1" file="/Users/diracmurairi/Documents/work/totonga/totonga-app-api-new/src/tests/user/controller.test.js" time="0.006" failures="1">
+    <testcase name="Signup it should sign up a new user" time="0.000" classname="it should sign up a new user">
+      <failure message="app.address is not a function" type="TypeError"><![CDATA[TypeError: app.address is not a function
+    at serverAddress (node_modules/chai-http/lib/request.js:282:18)
+    at new Test (node_modules/chai-http/lib/request.js:271:53)
+    at Object.obj.<computed> [as post] (node_modules/chai-http/lib/request.js:239:14)
+    at Context.<anonymous> (src/tests/user/controller.test.js:19:8)
+    at processImmediate (node:internal/timers:466:21)]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Login" timestamp="2023-02-05T07:07:14" tests="1" file="/Users/diracmurairi/Documents/work/totonga/totonga-app-api-new/src/tests/user/controller.test.js" time="0.001" failures="1">
+    <testcase name="Login it should log the user in" time="0.000" classname="it should log the user in">
+      <failure message="app.address is not a function" type="TypeError"><![CDATA[TypeError: app.address is not a function
+    at serverAddress (node_modules/chai-http/lib/request.js:282:18)
+    at new Test (node_modules/chai-http/lib/request.js:271:53)
+    at Object.obj.<computed> [as post] (node_modules/chai-http/lib/request.js:239:14)
+    at Context.<anonymous> (src/tests/user/controller.test.js:34:8)
+    at processImmediate (node:internal/timers:466:21)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
