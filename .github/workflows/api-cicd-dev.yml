@@ -1,0 +1,39 @@
+name: Deploy Django Server to EC2
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Restart PM2
+        run: npm run start-pm2:staging
+
+      - name: Notify Slack
+        if: always()
+        uses: ravsamhq/notify-slack-action@v2
+        with:
+          status: ${{ job.status }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          notify_when: "failure, success, skipped, cancelled"
+          notification_title: "{workflow} has {status_message}"
+          message_format: "{emoji} *{workflow}* : {branch} {status_message} in <{repo_url}|{repo}>"
+          footer: "Linked to Repo <{repo_url}|{repo}>"
+          mention_users: "U046H05T3QT, U04MMKFCCSG, U046FN5FP4J"
+          mention_users_when: "success,failure,cancelled,warnings,skipped"
+          mention_groups: "C048P230HKL, C046CQCKCTX"
+          mention_groups_when: "success,failure,cancelled,warnings,skipped"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.ACTION_MONITORING_SLACK }}

@@ -1,0 +1,12 @@
+export const UnauthorizedError = "UnauthorizedError";
+export const ValidationError = "ValidationError";
+export const ForbiddenError = "ForbiddenError";
+export const UnauthenticatedError = "UnauthenticatedError";
+export const BadRequestError = "BadRequestError";
+export const NotFoundError = "NotFoundError";
+export const ConflictError = "ConflictError";
+export const UnprocessableEntityError = "UnprocessableEntityError";
+export const InternalServerError = "InternalServerError";
+export const NotImplementedError = "NotImplementedError";
+export const BadGatewayError = "BadGatewayError";
+export const ServiceUnavailableError = "ServiceUnavailableError";
